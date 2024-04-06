@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arquita's Portfolio</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='Favicon.ico') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about-me">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contacts</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+    {% block content %} {% endblock content %}
+
+    <footer id="contact" id="contact">
+        <h4 class="white">Want to get in touch? Fill out the form below to send me a message and
+                            I will get back to you as soon as possible!
+        </h4>
+        <form action="{{ url_for('home') }}" method="post">
+            <input type="text" name="full-name" placeholder="Full Name" required><br>
+            <input type="email" name="email" placeholder="Email" required><br>
+            <textarea name="message" placeholder="Message" required></textarea><br>
+            <input class="btn" type="submit" value="Send Message" >
+        </form>
+    </footer>
+</body>
+    <script type="text/javascript" src="{{ url_for('static', filename='script/script.js') }}"></script>
+</html>
